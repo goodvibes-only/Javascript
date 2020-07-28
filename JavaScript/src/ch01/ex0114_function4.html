@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+//함수 선언
+function returnFunction(){
+	alert ('문장 A');
+	return; // 아무것도 리턴하지 않고 호출한 곳으로 돌아간다.
+	
+}
+	//함수 호출
+	var output = returnFunction();//output에는 돌려받은 값이 없다.
+	alert(typeof (output) + ' : ' + output);
+
+
+</script>
+</body>
+</html>

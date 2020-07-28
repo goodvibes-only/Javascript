@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		//getElementById()메소드를 이용해서 우너하는 요소 객체에 접근할 수 있다.
+		var header = document.getElementById('username');
+		
+		//input 요소의 value속성값을 대화 상자에 보여줍니다.
+		alert(header.value);
+		
+		var newValue = prompt("이름을 입력하세요", '');
+		//header.value에 newValue변수값을 대입함으로써 <input>요소의
+		//value속성 값을 변경시킬 수 있다.
+		
+		header.value = newValue;
+		header.style.background = 'yellow';
+		header.style.color = 'red';
+		header.style.fontSize = '30px';
+		header.style.width = '200px';
+		header.style.height = '50px';
+
+	}
+</script>
+</head>
+<body>
+
+	이름 :
+	<input id="username" type="text" value="사용자의 이름 : D반">
+
+</body>
+</html>

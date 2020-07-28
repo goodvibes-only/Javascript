@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+table, th, td {
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+	padding: 3px;
+}
+
+table {
+	font-size: 13pt;
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+caption {
+	color: green;
+	font-size: 20pt;
+}
+
+th {
+	background-color: pink;
+	height: 1em;
+}
+</style>
+
+</head>
+<body>
+	<script>
+		//2. 객체 리터럴 (콜론으로 구별되는 property와 값의 쌍으로 쉼표로 분리된 목록)이용하기
+		var book = {
+			'title' : '수미네 반찬',
+			'publisher' : '성안당',
+			'author' : '김수미',
+			'price' : '15300',
+			info : {
+				'pages' : 442,
+				'date' : '2010년 1월 30일',
+				'ISBN10' : 8970506407,
+				'size' : '188*243mm'
+
+			},
+
+			print : function() {
+
+				var list = "<table>";
+				list += "<caption> 서적 정보 </caption>";
+				list += "<tr>";
+				list += "<th> 항목 (속성 : property) </th>";
+				list += "<th> 내용 (값 : value) </th>";
+				list += "</tr>";
+
+				for ( var p in this) {
+					if (p != 'print') {
+						if (p != "info") {
+							list += "<tr>";
+							list += "<td> book." + p + "</td>";
+							list += "<td>" + this[p]
+							if (p == 'price') {
+								list += "원";
+								list += "";
+							}
+						} else if (p == "info") {
+							for ( var i in book.info) {
+								list += "<tr>";
+								list += "<td> book." + p + "." + i
+										+ "</td><td>" + this[p][i];
+
+								if (i == 'pages') {
+									list += "페이지";
+								} //if
+
+							}//for
+						}// info
+
+					}
+					list += "</td></tr>";
+					
+					document.body.innerHTML = list;
+				}
+				
+				list += "</table>";
+			}
+		}
+
+		book.print();
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	function timer() {
+		var today = new Date();
+		var date = today.toLocaleString();
+
+	switch(today.getDay()){
+	case 0 :
+		date += " 일요일 ";
+		color = "red";
+		break;
+	case 1 :
+		date += " 월요일 ";
+		color = "orange";
+		break;
+	case 2 :
+		date += " 화요일 ";
+		color = "yellow";
+		break;
+	case 3 :
+		date += " 수요일 ";
+		color = "green";
+		break;
+	case 4 :
+		date += " 목요일 ";
+		color = "blue";
+		break;
+	case 5 :
+		date += " 금요일 ";
+		color = "skyblue";
+		break;
+	case 6 :
+		date += " 토요일 ";
+		color = "purple";
+		break;
+	}
+	document.body.style.background = color;
+	document.body.style.fontSize = "30pt";
+	document.body.style.textAlign = "center"; 
+	document.body.style.color = "white"; 
+	document.body.innerHTML = date;
+	}
+	
+	timer();
+	setInterval(timer, 1000);
+
+	</script>
+
+</body>
+</html>

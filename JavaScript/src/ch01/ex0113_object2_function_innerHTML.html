@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+table, th, td {
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+	padding: 3px;
+}
+
+table {
+	font-size: 13pt;
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+caption {
+	color: green;
+	font-size: 20pt;
+}
+
+th {
+	background-color: pink;
+	height: 1em;
+}
+</style>
+
+</head>
+<body>
+	<script>
+		//2. 객체 리터럴 (콜론으로 구별되는 property와 값의 쌍으로 쉼표로 분리된 목록)이용하기
+		var saram = {
+			'name' : "나최고",
+			"age" : 25,
+			ki : 170.2,
+			blood : 'A',
+			address : '서울시 강남구',
+			print : function() {
+
+				var list = "<table>";
+				list += "<caption> 신상 정보 </caption>";
+				list += "<tr>";
+				list += "<th> 항목 (속성 : property) </th>";
+				list += "<th> 내용 (값 : value) </th>";
+				list += "</tr>";
+
+				for ( var p in this) {
+					if (p != 'print') {
+						list += "<tr>";
+						list += "<td> saram." + p + "</td>";
+						list += "<td>" + this[p];
+						if (p == 'age')
+							list += "세";
+						else if (p == 'blood')
+							list += "형";
+						else if (p == 'ki')
+							list += "cm";
+
+						list += "</td></tr>";
+
+					}//if
+				}//for
+				list += "</table>";
+				document.body.innerHTML = list;
+			}//print
+		}//saram
+
+		saram.print();
+	</script>
+</body>
+</html>

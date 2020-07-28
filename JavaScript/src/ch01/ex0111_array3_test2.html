@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+.red{color:red}
+.green{color:green}
+.bold{font-weight:bold;font-style:italtic}
+.yellow{color:yellow}
+
+
+</style>
+</head>
+<body>
+	<h3>비빔국수 재료</h3>
+	<hr>
+	<script>
+		var itemlist = [ '국수', '계란', '고추장', '김치', '오이' ];
+
+		var output = '<h1> 비빔국수 재료 </h1><hr>';
+		
+		output += '<ul> <li class="green bold"> '+ itemlist[0] + '</li>';
+		output += '<li class="yellow"> '+ itemlist[1] + '</li>';
+		output += '<li class="red"> '+ itemlist[2] + '</li>';
+		output += '<li> ' + itemlist[3] + '</li>';
+		output += '<li class="green"> '+ itemlist[4] + '</li></ul>';
+		
+		document.body.innerHTML = output;
+	</script>
+
+</body>
+</html>

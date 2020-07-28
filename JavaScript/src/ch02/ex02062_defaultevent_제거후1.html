@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--
+디폴트 이벤트  : 일부 HTML 태그는 이미 이벤트 리스너가 있습니다.
+			이러한 것들을 디폴트 이벤트라고 합니다
+	예를 들어 a 태그는 클릭하면 다른 페이지로 이동하는데 이것이 a태그가 가진 디폴트 이벤트입니다.
+	또한 입력 양식의 submit버튼을 누르면 자동으로 입력 양식을 제출하고 페이지를 새로고침하는 것이
+	디폴트 이벤트 입니다.
+	
+	디폴트 이벤트 제거하는 방법
+	1. obj.onsubmit = function(){
+				...
+				return false;
+		}
+		
+	2. event.preventDefault()를 사용하는 경우
+		<a href = "http://www.naver.com"
+			onclick="event.preventDefault()">
+	
+	3. function whenSubmit(){
+				...
+				return false;
+		}
+		<form onsubmit = "return whenSubmit()">
+			
+			-->
+<style>
+body{margin:20px auto}
+fieldset{margin:0 auto; width : 400px}
+legend{text-align : center}
+label {display:inline-block; width:150px; color : purple;
+		text-align : right}
+input{
+	border-radius :3px; border:1px solid green;
+	height : 23px; width : 200px; margin-bottom:5px;
+}	
+input:focus{
+	outline:none;
+	border:1px dotted green
+}
+input[type="submit"]{
+	background:green; height:30px; color:white;
+	display:inline-block; margin-left:39%
+}
+input[type="submit"]:hover{opacity:0.8;cursor:pointer}
+
+
+
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form id = "my-form" action = "ex0201_domtree.html">
+<fieldset>
+<legend>회원가입 폼</legend>
+<label for = "name">이름</label>
+<input type = "text" name = "name" id = "name"><br>
+
+<label for = "pass">비밀번호</label>
+<input type = "password" name = "pass" id ="pass"><br>
+
+<label for = "pass-check">비밀번호 확인</label>
+<input type = "password" id = "pass-check"><br>
+
+<input type = "submit" value = "제출">
+
+</fieldset>
+</form>
+
+<script>
+	//이벤트를 연결합니다.
+	document.getElementById('my-form').onsubmit
+		= function(){
+			return false; //이벤트 리스너에 false를 리턴하면 입력 양식을
+							// 제출하지 않습니다.
+		
+	};
+
+</script>
+
+</body>
+</html>

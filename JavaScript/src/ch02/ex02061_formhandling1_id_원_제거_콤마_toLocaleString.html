@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	//"25,000,000원" => "25000000" 과정
+	var data = "25,000,000원";
+	
+	//"25,000,000원" => "25000,000원"
+	var data1 = data.replace(",",""); //원이 제거되지 않음
+	document.write(data + "=>" + data1 + "<hr>")
+
+	/*
+	정규식을 이용
+	1. 만드는 방법
+	 	1)형식
+	 	 /pattern 형식/ [옵션]
+	 	2)시작과 끝은 /를 사용
+	 	3)옵션은 생략가능
+	 	
+	2. replace(/,|원/,"")의미
+		1)data 문자열을 처음부터 한 글자씩 비교해서 ',' 또는 '원'이면 ""로 처음 한번만 바꿉니다.
+		2)아래의 옵션 g를  이용해서 문자열 처음부터 끝까지 적용하도록 합니다.
+		
+	*/
+	
+	var data2 = data.replace(/,|원/,"");
+	document.write(data + "=>" + data2 + "<hr>");
+
+	//정규식을 이용
+	//g : 문자열 끝까지 적용
+	var data3 = data.replace(/,|원/g,"");
+	document.write(data + "=>" + data3 + "<hr>");
+	
+	var data4 = "25/000/".replace(/\//g,"");
+	document.write("25/000/" + "=>" + data4 + "<hr>")
+	
+	var data5 = 25000000;
+	document.write(data5 + "=>" + data5.toLocaleString() + "<hr>")
+
+</script>
+
+</body>
+</html>

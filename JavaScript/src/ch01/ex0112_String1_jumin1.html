@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체의 메소드 활용</title>
+
+<style>
+div {color:white;
+	font-size:100pt;
+	font-weight:bold;
+	text-align:center;
+	}
+
+</style>
+</head>
+<!-- 
+var jumin = prompt("주민번호를 입력하세요?","810908-3234567");
+1. 주민번호 길이가 14개인지 확인 : "주민번호의 길이는 14개입니다."
+2. 앞자리 6개가 숫자인지 확인 : "앞자리 형식을 확인하세요"
+3. 7번째 자리가 '-'인지 확인  : 앞자리 입력 후 -을 입력하세요"
+4. 뒷자리 7자리가 숫자인지 확인 : "뒷자리 형식을 확인하세요"
+5. 8번째 자리가 1 또는 3이면 "남자" 와 배경색 파랑, 2 또는 4이면 "여자"와 배경색 pink 
+
+ -->
+<body>
+
+	<h3>String 객체의 메소드 활용</h3>
+	<hr>
+	<script>
+		var jumin = prompt("주민번호를 입력하세요?", "810908-3234567");
+		var spl = jumin.split("-");
+	
+		
+		if(jumin.length!=14){
+			alert("주민번호의 길이는 14개입니다.");
+		}else if((jumin.indexOf("-") + 1) != 7){
+			alert("앞자리 입력 후  -을 입력하세요")
+		}else if(spl[0].length != 6){
+			alert("앞자리 형식을 확인하세요.")
+		}else if(spl[1].length != 7){
+			alert("뒷자리 형식을 확인하세요.")
+		}else{
+			if(jumin.charAt(7) == "1" || jumin.charAt(7) == "3"){
+				document.body.style.background = "skyblue";
+				document.write("<div>남자</div>");
+			}else if(jumin.charAt(7) == "2" || jumin.charAt(7) == "4"){
+				document.body.style.background = "pink";
+				document.write("<div>여자</div>");
+			}
+				
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+// 변수 선언
+// 컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+// var today = new Date(2018, 3, 11, 0, 0, 0, 0);
+var today = new Date();
+// 현재 날짜 : 2020.4.22. 오전 8:45:18
+document.write("현재 날짜 : " + today.toLocaleString() + "<br>");
+
+var answer = prompt("비교할 날짜를 입력하세요.","2020-04-21");
+while (!answer){
+	answer = prompt ("날짜를 입력하세요", "2020-04-21");
+}
+
+//날짜 형식의 string을 이용해서 날짜를 설정한다.
+var input = new Date(answer);
+//비교 날짜 : 2020.5.21. 오전 9:00:00 - 시간이 9시로 정해져 있습니다.
+//날짜 차이를 구하기 위해 시간, 분, 초, 밀리세컨즈를 동일하게 맞추어야 합니다.
+document.write("비교날짜 : " + input.toLocalString() + "<br>");
+
+
+</script>
+
+</body>
+</html>

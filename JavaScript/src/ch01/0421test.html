@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var answer = prompt("비교할 날짜를 입력하세요.", "2020-04-05");
+
+		var today = new Date();
+		today.setHours(0, 0, 0);
+		today.setMilliseconds(0);
+
+		var datesplit = answer.split("-");
+		var dday = new Date(datesplit[0], datesplit[1] - 1, datesplit[2]);
+		dday.setHours(0, 0, 0); //0시 0분 0초
+		dday.setMilliseconds(0);
+
+		var result = Math.floor((today.getTime() - dday.getTime()) / 86400000);
+
+		if (result > 0) {
+			document.write(result + '일 전입니다.');
+		} else if (result < 0) {
+			document.write('앞으로 ' + Math.abs(result) + '일 남았습니다.');
+		} else {
+			document.write('오늘입니다.');
+		}
+	</script>
+</body>
+</html>

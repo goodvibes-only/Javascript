@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시계</title>
+</head>
+<body>
+<script>
+
+
+function clock(){
+	var today = new Date();
+	var yoil = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
+	var color = ["red","orange","yellow","green","blue","magenta","purple"];
+	document.body.innerHTML = today.toLocaleString() + " " + yoil[today.getDay()];
+	document.body.style.color = color[today.getDay()];
+}
+	setInterval(clock,1000);
+	
+</script>
+
+</body>
+</html>

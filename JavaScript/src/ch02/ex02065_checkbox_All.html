@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모든 체크박스 선택/해제</title>
+</head>
+<body>
+
+
+<div> 모든 체크박스 선택/해제 </div>
+	<hr>
+	<form>
+	<label><input type = "checkbox" name = "all"
+			value = '모두 선택/해제'> ALL </label><br>
+		<label><input type = "checkbox" name = "icon"
+			value = 'image/image1.png'> image1 </label>
+		<label><input type = "checkbox" name = "icon"
+			value = 'image/image2.png'> image2 </label>
+		<label><input type = "checkbox" name = "icon"
+			value = 'image/image3.png'> image3 </label>
+	</form>
+	
+	<script>
+	var all = document.getElementsByName('all');
+		all[0].addEventListener('click', show);
+		
+		function show(e){
+			var icons = document.getElementsByName('icon');
+			
+			for(var i = 0; i < icons.length; i++){
+				icons[i].checked = this.checked; //this = all[0] 가 체크되어있으면 icon 3개 모두 체크
+			}
+		}
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+body {
+	text-align: center
+}
+
+table {
+	width: 500px;
+	margin: 10px auto;
+	text-align: center
+}
+
+tr>td:first-child {
+	width: 25%
+}
+
+tr>td:nth-child(2) {
+	width: 75%
+}
+
+/*짝수*/
+tr:nth-child(even) {
+	background-color: #fceded
+}
+
+/*홀수*/
+tr:nth-child(odd) {
+	background-color: lightpink
+}
+
+caption {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	font-size: 25px;
+	color: green
+}
+
+th {
+	background-color: #8ccbe1
+}
+</style>
+</head>
+<body>
+
+	<!-- 
+다음과 같은 북 리스트가 존재하는 경우
+주문할 색 수량을 입력받고 그 수량만큼 책 제목을 번호로
+선택해서 테이블로 출력합니다.
+
+참고)
+1. 책의 제목을 변수에 대입하니다.
+var book1 = "자바 스크립트";
+var book2 = "HTML";
+var book3 = "CSS";
+ 
+2. prompt()함수를 이용해서 "주문할 책 수량을 입력하세요?"라는 문구가 나오고 수량을 입력한다.
+
+3. 책 제목을 번호로 선택하세요..
+	1. 자바스크립트
+	2. HTML
+	3. CSS
+	
+	2번의 수량만큼 책 번호를 선택하께끔 반복합니다.
+	만약 범위에 없는 수를 입력하면 "리스트에 없는 책을 선택하셨습니다."라는 alert창을 띄우고
+	다시 입력 받습니다.
+	
+4. 책 수량만큼 입력받은 후 테이블을 이용해서 선택한 책 제목이 출력되도록 합니다.
+
+ -->
+
+	<script>
+		var book1 = "자바 스크립트";
+		var book2 = "HTML";
+		var book3 = "CSS";
+		var title;
+		var n = prompt("주문할 책 수량을 입력하세요?","1");
+		
+		if(Number(n)>=1){
+			var list = "<table>";
+			list += "<caption> 책 주문 입력 내용 </caption>";
+			list += "<thead><tr>";
+			list += "<th> 순번 </th> <th> 제목 </th>";
+			list += "</tr></thead><tbody>";
+			
+			var book_list = "1." + book1 + "\n" + "2." + book2 + "\n" + "3." + book3;
+			for (var i = 1; i <= Number(n); i++){
+				var choice = prompt("책 제목을 번호로 선택하세요...\n" + book_list, "1");
+				
+				if (choice =="1")
+				title = book1
+				else if (choice == "2")
+					title = book2;
+				else if (choice == "3")
+					title = book3;
+				else {
+					alert("리스트에 없는 책을 선택하셨습니다.");
+					i--;
+					continue; //105~108라인 실행하지 않고 94번 라인으로 이동
+				}
+				list += "<tr>";
+				list += "<td>" + i + "</td>";
+				list += "<td>" + title + "</td>";
+				list += "</tr>";
+			}
+			list += "</tbody></table>";
+			
+			document.body.innerHTML = list;
+		}else if(n==null){
+			alert('취소를 선택하셨습니다.')
+		}else{
+			alert('형식에 맞게 입력하세요 - 숫자로 1이상을 입력합니다.');
+		}
+				
+
+	</script>
+</body>
+</html>

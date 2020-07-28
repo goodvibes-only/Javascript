@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+li:first-child {
+	color:green;
+	font-weight : bold;
+	font-style:italic;
+}
+li:nth-child(2) {
+	color:yellow;
+}
+li:nth-child(3) {
+	color:red;
+}
+li:last-child {
+	color:green;
+}
+
+</style>
+</head>
+<body>
+	<h3>비빔국수 재료</h3>
+	<hr>
+	<script>
+		var itemlist = [ '국수', '계란', '고추장', '김치', '오이' ];
+
+		var list = "<ul> <li>" + itemlist[0] + "</li>";
+		list += "<li>" + itemlist[1] + "</li>";
+		list += "<li>" + itemlist[2] + "</li>";
+		list += "<li>" + itemlist[3] + "</li>";
+		list += "<li>" + itemlist[4] + "</li> </ul>";
+
+		document.body.innerHTML += list;
+	</script>
+
+</body>
+</html>
